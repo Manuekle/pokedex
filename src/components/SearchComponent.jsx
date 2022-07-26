@@ -9,13 +9,14 @@ function SearchComponent(props) {
     <div className="flex items-center w-full">
       <div className="relative">
         <input
+          submit={props.submit}
           style={{
             border: "none",
             outline: "none",
           }}
           className="border-gray-300 bg-gray-200 rounded-3xl pt-3 pb-3 pl-6 pr-6 shadow-sm"
           type="text"
-          placeholder="Search for a pokemon"
+          placeholder="Search for a pokemon..."
         />
         <span className="text-gray-500 hover:text-gray-400 absolute pt-3 right-4">
           {search}

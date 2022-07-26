@@ -1,15 +1,23 @@
 import React from "react";
+import Colors from "./Colors";
 
 function CardComponent({ pokemon }) {
   return (
-    <div className="bg-emerald-400 shadow-lg shadow-emerald-400/50 relative p-2 overflow-hidden w:full mt:4 mb-4 lg:mt-0 lg:mb-0 lg:w-56 rounded-2xl pt-6 pb-6 pl-7">
+    <div
+      className="bg-purple-400 shadow-purple-400/50 shadow-lg relative p-2 overflow-hidden w:full mt:4 mb-4 lg:mt-0 lg:mb-0 lg:w-56 rounded-2xl pt-6 pb-6 pl-7"
+      style={{
+        backgroundColor: Colors[pokemon.name],  
+        boxShadow: `0px 0px 10px ${Colors[pokemon.name]}`,
+        border: `1px solid ${Colors[pokemon.name]}`,  
+      }}
+    >
       <div className="grid grid-cols-2">
         <div className="flex justify-start items-center col-span-1">
           <span className="text-white font-bold text-lg capitalize">
             {pokemon.name}
           </span>
         </div>
-        <div className="flex justify-end items-center col-span-1">
+        <div className="flex justify-end items-center col-span-1 pr-4">
           <span className="text-white font-bold text-lg opacity-40">
             #{pokemon.id}
           </span>
@@ -41,7 +49,7 @@ function CardComponent({ pokemon }) {
       </div>
 
       <svg
-        className="absolute w-48 h-48 top-20 left-44 md:left-60 lg:left-28 -z-1 opacity-20"
+        className="absolute w-64 h-64 top-10 left-28 md:left-60 lg:left-20 -z-1 opacity-20"
         xmlns="http://www.w3.org/2000/svg"
         width="24px"
         height="24px"
