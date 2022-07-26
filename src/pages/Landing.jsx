@@ -19,7 +19,7 @@ function Landing() {
           <span className="font-bold text-4xl lg:text-6xl pt-8">{text}</span>
           
         </div>
-        <div class="pt-8 pb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-2">
+        <div className="pt-8 pb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-2">
           <SectionComponent
             onClick={() => {
               // link

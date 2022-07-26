@@ -32,16 +32,11 @@ function CardComponent({ pokemon }) {
             />
           </div>
         </div>
-        <div className="flex flex-wrap gap-1 pt-2 w-full">
-          {/* {props.types.map((type) => (
-          <span key={type.id} class="text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-white pr-4 pl-4 pt-1 pb-1">
-            {type.name}
-          </span>
-        ))} */}
+        <div className="flex flex-wrap gap-1 pt-2 w-full">         
           {pokemon.types.map((type, i) => {
             return (
               <div
-                class="text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-white pr-4 pl-4 pt-1 pb-1"
+                className="text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-white pr-4 pl-4 pt-1 pb-1"
                 key={i}
               >
                 {type.type.name}

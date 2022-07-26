@@ -6,7 +6,7 @@ function CategoriesComponent(props) {
       {props.types.map((type) => (
         <span
           key={type.id}
-          class="text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-black pr-4 pl-4 pt-1 pb-1"
+          className="text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-black pr-4 pl-4 pt-1 pb-1"
         >
           {type.name}
         </span>
