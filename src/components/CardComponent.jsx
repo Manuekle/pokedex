@@ -12,58 +12,57 @@ function CardComponent({ pokemon }) {
         border: `1px solid ${Colors[pokemon.name]}`,
       }}
     >
-      <div className="grid grid-cols-2">
-        <div className="flex justify-start items-center col-span-1">
-          <span className="text-white font-bold text-lg capitalize">
-            {pokemon.name}
-          </span>
-        </div>
-        <div className="flex justify-end items-center col-span-1 pr-4">
-          <span className="text-white font-bold text-lg opacity-40">
-            #{pokemon.id}
-          </span>
-        </div>
-        <div className="flex justify-end items-center col-span-1">
-          <Link to={`/pokemon/${pokemon.name}`}>
+      <Link to={`/pokemon/${pokemon.name}`}>
+        <div className="grid grid-cols-2">
+          <div className="flex justify-start items-center col-span-1">
+            <span className="text-white font-bold text-lg capitalize">
+              {pokemon.name}
+            </span>
+          </div>
+          <div className="flex justify-end items-center col-span-1 pr-4">
+            <span className="text-white font-bold text-lg opacity-40">
+              #{pokemon.id}
+            </span>
+          </div>
+          <div className="flex justify-end items-center col-span-1">
             <img
               src={pokemon.sprites.front_default}
               alt={pokemon.name}
               className="w-24 h-24"
             />
-          </Link>
+          </div>
         </div>
-      </div>
-      <div className="flex flex-wrap gap-1 pt-2 w-full">
-        {/* {props.types.map((type) => (
+        <div className="flex flex-wrap gap-1 pt-2 w-full">
+          {/* {props.types.map((type) => (
           <span key={type.id} class="text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-white pr-4 pl-4 pt-1 pb-1">
             {type.name}
           </span>
         ))} */}
-        {pokemon.types.map((type, i) => {
-          return (
-            <div
-              class="text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-white pr-4 pl-4 pt-1 pb-1"
-              key={i}
-            >
-              {type.type.name}
-            </div>
-          );
-        })}
-      </div>
+          {pokemon.types.map((type, i) => {
+            return (
+              <div
+                class="text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-white pr-4 pl-4 pt-1 pb-1"
+                key={i}
+              >
+                {type.type.name}
+              </div>
+            );
+          })}
+        </div>
 
-      <svg
-        className="absolute w-64 h-64 top-10 left-28 md:left-60 lg:left-20 -z-1 opacity-20"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24px"
-        height="24px"
-        viewBox="0 0 1024 1024"
-      >
-        <path
-          id="pokeball"
-          fill="#fff"
-          stroke="none"
-          stroke-width="1"
-          d="M 512.00,359.18
+        <svg
+          className="absolute w-64 h-64 top-10 left-28 md:left-60 lg:left-20 -z-1 opacity-20"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24px"
+          height="24px"
+          viewBox="0 0 1024 1024"
+        >
+          <path
+            id="pokeball"
+            fill="#fff"
+            stroke="none"
+            stroke-width="1"
+            d="M 512.00,359.18
            C 512.00,359.18 512.00,359.18 512.00,359.18
              596.40,359.18 664.81,427.60 664.82,512.00
              664.82,512.00 664.82,512.00 664.82,512.00
@@ -99,8 +98,9 @@ function CardComponent({ pokemon }) {
              885.55,512.00 691.98,512.00 691.98,512.00
              691.98,412.60 611.40,332.02 512.00,332.02
              412.60,332.02 332.02,412.60 332.02,512.00 Z"
-        />
-      </svg>
+          />
+        </svg>
+      </Link>
     </button>
   );
 }
