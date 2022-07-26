@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 import Github from "./svg/Github";
 import img from "../assets/pokeball.jpg"
 
@@ -20,9 +19,9 @@ function NavComponent(props) {
           <div className="flex items-center justify-end col-span-1">
             <div className="flex flex-row gap-4">
               <span>
-                <Link to="">
+                <a target="_blank" href="https://github.com/Manuekle/pokedex">
                   <Github width="25px" height="25px" />
-                </Link>
+                </a>
               </span>             
             </div>
           </div>
