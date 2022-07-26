@@ -41,15 +41,11 @@ function Pokedex() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
           {/* <CardComponent /> */}
           {loading ? (
-            <div className="text-center">
-              <div className="spinner-border text-primary" role="status">
-                <span className="sr-only">Loading...</span>
-              </div>
-            </div>
+            <span>loading</span>
           ) : (
             <>
               {pokemonData.map((pokemon, i) => (
-                <CardComponent key={i} pokemon={pokemon}/>
+                <CardComponent key={i} pokemon={pokemon} />
               ))}
             </>
           )}

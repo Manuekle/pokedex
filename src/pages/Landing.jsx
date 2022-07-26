@@ -3,6 +3,7 @@ import SectionComponent from "../components/SectionComponent";
 // Routes
 import { Routes, Route } from "react-router-dom";
 import Pokedex from "./Options/Pokedex";
+import Pokemon from "./Options/Pokemon";
 
 // Header
 import NavComponent from "../components/NavComponent";
@@ -72,6 +73,7 @@ function Landing() {
         <Routes>
           <Route path="/" element={<Pokedex />} />
           <Route path="/pokedex" element={<Pokedex />} />
+          <Route path="/pokemon/:id" element={<Pokemon />} />
         </Routes>
       </section>
       <FooterComponent />

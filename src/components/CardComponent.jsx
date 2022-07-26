@@ -1,14 +1,15 @@
 import React from "react";
 import Colors from "./Colors";
+import { Link } from "react-router-dom";
 
 function CardComponent({ pokemon }) {
   return (
-    <div
-      className="bg-purple-400 shadow-purple-400/50 shadow-lg relative p-2 overflow-hidden w:full mt:4 mb-4 lg:mt-0 lg:mb-0 lg:w-56 rounded-2xl pt-6 pb-6 pl-7"
+    <button
+      className="bg-purple-400 shadow-purple-400/50 relative p-2 overflow-hidden w:full mt:4 mb-4 lg:mt-0 lg:mb-0 lg:w-56 rounded-2xl pt-6 pb-6 pl-7 transition ease-out delay-10 hover:-translate-y-1 hover:scale-120 duration-300"
       style={{
-        backgroundColor: Colors[pokemon.name],  
+        backgroundColor: Colors[pokemon.name],
         boxShadow: `0px 0px 10px ${Colors[pokemon.name]}`,
-        border: `1px solid ${Colors[pokemon.name]}`,  
+        border: `1px solid ${Colors[pokemon.name]}`,
       }}
     >
       <div className="grid grid-cols-2">
@@ -23,11 +24,13 @@ function CardComponent({ pokemon }) {
           </span>
         </div>
         <div className="flex justify-end items-center col-span-1">
-          <img
-            src={pokemon.sprites.front_default}
-            alt={pokemon.name}
-            className="w-24 h-24"
-          />
+          <Link to={`/pokemon/${pokemon.name}`}>
+            <img
+              src={pokemon.sprites.front_default}
+              alt={pokemon.name}
+              className="w-24 h-24"
+            />
+          </Link>
         </div>
       </div>
       <div className="flex flex-wrap gap-1 pt-2 w-full">
@@ -98,7 +101,7 @@ function CardComponent({ pokemon }) {
              412.60,332.02 332.02,412.60 332.02,512.00 Z"
         />
       </svg>
-    </div>
+    </button>
   );
 }
 
