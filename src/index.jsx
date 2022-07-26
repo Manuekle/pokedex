@@ -5,6 +5,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import hello from "./store";
 import "./globals.scss";
+// import js tailwindcss/tailwind.config.js
+// import tailwindcss/tailwind.config.js
+import "tailwindcss/defaultConfig.js";
+
 
 const store = hello();
 

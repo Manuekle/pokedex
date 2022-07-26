@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import Api from "../../utils/Api";
 import Colors from "../../components/Colors";
 
+import TabComponent from "../../components/TabComponent";
+
 import { useNavigate } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -57,7 +59,7 @@ function Pokemon() {
                 </button>
               </div>
               <div className="flex justify-end">
-                <span className="text-white">{heart}</span>
+                <span className="text-rose-500">{heart}</span>
               </div>
             </div>
             <div className="grid grid-cols-2 pt-8">
@@ -89,21 +91,8 @@ function Pokemon() {
               </div>
             </div>
           </div>
-          <div className="bg-white rounded-t-2xl rounded-b-lg p-4">
-            <div className="flex flex-row items-center justify-center gap-6 lg:gap-96">
-              <button className="text-sm lg:text-lg font-bold text-gray-400 capitalize">
-                about
-              </button>
-              <button className="text-sm lg:text-lg font-bold text-gray-400 capitalize">
-                base stats
-              </button>
-              <button className="text-sm lg:text-lg font-bold text-gray-400 capitalize">
-                evolution
-              </button>
-              <button className="text-sm lg:text-lg font-bold text-gray-400 capitalize">
-                moves
-              </button>
-            </div>
+          <div className="bg-white rounded-t-2xl rounded-b-lg">
+            <TabComponent height={pokemon.height} weight={pokemon.weight} />
           </div>
         </section>
       )}

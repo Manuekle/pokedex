@@ -11,9 +11,9 @@ function FooterComponent(props) {
         <span>Created by Manuel</span>
       </div>
       <div className="flex justify-center pt-2">
-        <a href="#" className="text-black hover:text-gray-500">
+        {/* <a href="#" className="text-black hover:text-gray-500">
           {up}
-        </a>
+        </a> */}
       </div>
     </footer>
   );
