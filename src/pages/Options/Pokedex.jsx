@@ -32,10 +32,13 @@ function Pokedex() {
     setPokemonData(_pokemonData);
   };
 
+  // filter search pokemon
+  const [search, setSearch] = useState("");
+
   return (
     <div className="grid grid-cols-5 gap-6 pt-8">
       <div className="col-span-5 lg:col-span-1">
-        <SearchComponent />
+        <SearchComponent onChange={(e) => setSearch(e.target.value)} value={search} />
       </div>
       <div className="col-span-5 lg:col-span-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
@@ -44,9 +47,20 @@ function Pokedex() {
             <span>loading</span>
           ) : (
             <>
-              {pokemonData.map((pokemon, i) => (
+              {pokemonData
+                .filter((pokemon) => {
+                  if (search === "") {
+                    return pokemon;
+                  } else {
+                    return pokemon.name.toLowerCase().includes(search.toLowerCase());
+                  }
+                })
+                .map((pokemon) => {
+                  return <CardComponent pokemon={pokemon} />;
+                })}
+              {/* {pokemonData.map((pokemon, i) => (
                 <CardComponent key={i} pokemon={pokemon} />
-              ))}
+              ))} */}
             </>
           )}
         </div>
