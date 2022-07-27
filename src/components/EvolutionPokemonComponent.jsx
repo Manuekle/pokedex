@@ -25,7 +25,7 @@ function EvolutionPokemonComponent(props) {
     getEvolution();
   }, [id, setEvolution]);
 
-  console.log(evolution);
+  // console.log(evolution);
 
   return (
     <div className="grid grid-cols-3 p-10 gap-8">

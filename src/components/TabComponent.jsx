@@ -10,7 +10,7 @@ function TabComponent(pokemon) {
   const tabs = ["About", "Stats", "Evolution", "Moves"];
 
   const panels = [
-    <AboutPokemonComponent height={pokemon.height} weight={pokemon.weight}/>,
+    <AboutPokemonComponent height={pokemon.height} weight={pokemon.weight} id={pokemon.id}/>,
     <StatsPokemonComponent />,
     <EvolutionPokemonComponent id={pokemon.id}/>,
     <MovesPokemonComponent />,
@@ -18,8 +18,8 @@ function TabComponent(pokemon) {
   return (
     <>
       <Tabs>
-        <div className="p-4">
-          <TabList className="flex flex-row gap-9 lg:gap-96 justify-center">
+        <div className="p-3">
+          <TabList className="flex flex-row gap-8 lg:gap-12 justify-center">
             {tabs.map((tab, i) => {
               return (
                 <Tab

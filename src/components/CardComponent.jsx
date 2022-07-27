@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Colors from "./Colors";
 import { Link } from "react-router-dom";
 
 function CardComponent({ pokemon }) {
+  const [loading, isLoading] = useState(true);
+
+  useEffect(() => {
+    isLoading(false);
+  }, []);
+
   return (
     <button
       className="bg-purple-400 shadow-purple-400/50 relative p-2 overflow-hidden w:full mt:4 mb-4 lg:mt-0 lg:mb-0 rounded-2xl pt-6 pb-6 pl-7 transition ease-out delay-10 hover:-translate-y-1 hover:scale-120 duration-300"
@@ -32,11 +38,16 @@ function CardComponent({ pokemon }) {
             />
           </div>
         </div>
-        <div className="flex flex-wrap gap-1 pt-2 w-full">         
+        <div className="flex flex-wrap gap-1 pt-2 w-full">
           {pokemon.types.map((type, i) => {
             return (
               <div
-                className="text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-white pr-4 pl-4 pt-1 pb-1"
+                className="text-xs text-white font-semibold rounded-2xl capitalize opacity-90  pr-4 pl-4 pt-1 pb-1"
+                style={{
+                  backgroundColor: Colors[type.type.name],
+                  boxShadow: `0px 0px 10px ${type.type[pokemon.name]}`,
+                  border: `1px solid ${Colors[type.type.name]}`,
+                }}
                 key={i}
               >
                 {type.type.name}

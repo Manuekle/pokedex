@@ -13,14 +13,12 @@ function CategoriesComponent({ pokemon }) {
         const res = await axios.get("https://pokeapi.co/api/v2/type");
         setTypes(res.data.results);
       } catch (error) {
-        console.log(error);
+        console.log("error");
       }
     };
     getTypes();
     // setFilter(pokemon);
   }, [pokemon]);
-
-  console.log(typed);
 
   const filtered = (typeq) => {
     setFilter(pokemon);
@@ -39,20 +37,24 @@ function CategoriesComponent({ pokemon }) {
   };
 
   return (
-    <div className="grid grid-cols-1 gap-2 p-6 mr-6">
-      <button
-        className="text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-black pr-4 pl-4 pt-1 pb-1"
-        onClick={() => filtered("all")}
-      >
-        Show all
-      </button>
-      <div className="flex justify-center">
-        <div className="grid grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 gap-2 mr-4 pt-4">
+      <div className="col-span-1 flex justify-center">
+        <button
+          className="text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-black pr-24 pl-24 pt-1 pb-1 shadow-sm"
+          onClick={() => filtered("all")}
+        >
+          Show all
+        </button>
+      </div>
+      <div className="flex justify-center col-span-1">
+        <div className="grid grid-cols-3 gap-2">
           {typed.map((type) => (
             <button
-              className="text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-black pr-4 pl-4 pt-1 pb-1"
+              className="text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-black pr-4 pl-4 pt-1 pb-1 opacity-80 shadow-sm"
               style={{
                 backgroundColor: Colors[type.name],
+                boxShadow: `0px 0px 4px ${Colors[type.name]}`,
+                border: `1px solid ${Colors[type.name]}`,
               }}
               onClick={() => filtered(type.name)}
             >
@@ -62,24 +64,17 @@ function CategoriesComponent({ pokemon }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1">
+      {/* <div className="grid grid-cols-1">
         {filter
           ? filter.map((p) => (
-              <span>
+              <div>
                 {p.types.map((typed) => (
                   <span>{p.name}</span>
                 ))}
-              </span>
+              </div>
             ))
           : null}
-      </div>
-      {/* <div className="flex justify-center">
-        <div className="grid grid-cols-4 gap-4">
-          <span className="text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-black pr-4 pl-4 pt-1 pb-1">
-            
-          </span>
-        </div>
-      </div> */}
+      </div>       */}
     </div>
   );
 }

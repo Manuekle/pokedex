@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import SearchComponent from "../../components/SearchComponent";
 import CardComponent from "../../components/CardComponent";
 import CategoriesComponent from "../../components/CategoriesComponent";
+import LoaderComponent from "../../components/LoaderComponent";
 // Services
 import { getPokemon, getAllPokemon } from "../../services/PokeService";
 
@@ -39,36 +40,44 @@ function Pokedex() {
   return (
     <div className="grid grid-cols-5 gap-6 pt-8">
       <div className="col-span-5 lg:col-span-1">
-        <SearchComponent onChange={(e) => setSearch(e.target.value)} value={search} />
+        <div className="flex lg:ml-0 ml-6">
+          <SearchComponent
+            onChange={(e) => setSearch(e.target.value)}
+            value={search}
+          />
+        </div>
 
-        <CategoriesComponent pokemon={pokemonData}/>
-        
+        <CategoriesComponent pokemon={pokemonData} />
       </div>
-      <div className="col-span-5 lg:col-span-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
-          {/* <CardComponent /> */}
-          {loading ? (
-            <span>loading</span>
-          ) : (
+
+      {loading ? (
+        <div className="col-span-4">
+          <span className="flex items-center justify-center h-full text-center">
+            <LoaderComponent />
+          </span>
+        </div>
+      ) : (
+        <div className="col-span-5 lg:col-span-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
             <>
               {pokemonData
                 .filter((pokemon) => {
                   if (search === "") {
+                    // console.log(pokemon);
                     return pokemon;
                   } else {
-                    return pokemon.name.toLowerCase().includes(search.toLowerCase());
+                    return pokemon.name
+                      .toLowerCase()
+                      .includes(search.toLowerCase());
                   }
                 })
                 .map((pokemon) => {
                   return <CardComponent pokemon={pokemon} />;
                 })}
-              {/* {pokemonData.map((pokemon, i) => (
-                <CardComponent key={i} pokemon={pokemon} />
-              ))} */}
             </>
-          )}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
