@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function CardComponent({ pokemon }) {
   return (
     <button
-      className="bg-purple-400 shadow-purple-400/50 relative p-2 overflow-hidden w:full mt:4 mb-4 lg:mt-0 lg:mb-0 lg:w-56 rounded-2xl pt-6 pb-6 pl-7 transition ease-out delay-10 hover:-translate-y-1 hover:scale-120 duration-300"
+      className="bg-purple-400 shadow-purple-400/50 relative p-2 overflow-hidden w:full mt:4 mb-4 lg:mt-0 lg:mb-0 rounded-2xl pt-6 pb-6 pl-7 transition ease-out delay-10 hover:-translate-y-1 hover:scale-120 duration-300"
       style={{
         backgroundColor: Colors[pokemon.name],
         boxShadow: `0px 0px 10px ${Colors[pokemon.name]}`,
@@ -26,7 +26,7 @@ function CardComponent({ pokemon }) {
           </div>
           <div className="flex justify-end items-center col-span-1">
             <img
-              src={pokemon.sprites.front_default}
+              src={pokemon.sprites.other.dream_world.front_default}
               alt={pokemon.name}
               className="w-24 h-24"
             />
@@ -46,7 +46,7 @@ function CardComponent({ pokemon }) {
         </div>
 
         <svg
-          className="absolute w-64 h-64 top-10 left-28 md:left-60 lg:left-20 -z-1 opacity-20"
+          className="absolute w-64 h-64 top-10 left-44 md:left-44 lg:left-36 -z-1 opacity-20"
           xmlns="http://www.w3.org/2000/svg"
           width="24px"
           height="24px"

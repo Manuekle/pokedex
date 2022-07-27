@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 // Components
 import SearchComponent from "../../components/SearchComponent";
 import CardComponent from "../../components/CardComponent";
+import CategoriesComponent from "../../components/CategoriesComponent";
 // Services
 import { getPokemon, getAllPokemon } from "../../services/PokeService";
 
@@ -15,12 +16,12 @@ function Pokedex() {
       let response = await getAllPokemon(apiURL);
       await loadPokemon(response.results);
       isLoading(false);
-      console.log(response);
+      // console.log(response);
     }
     fetchData();
   }, []);
 
-  console.log(pokemonData);
+  // console.log(pokemonData);
 
   const loadPokemon = async (data) => {
     let _pokemonData = await Promise.all(
@@ -39,6 +40,9 @@ function Pokedex() {
     <div className="grid grid-cols-5 gap-6 pt-8">
       <div className="col-span-5 lg:col-span-1">
         <SearchComponent onChange={(e) => setSearch(e.target.value)} value={search} />
+
+        <CategoriesComponent pokemon={pokemonData}/>
+        
       </div>
       <div className="col-span-5 lg:col-span-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">

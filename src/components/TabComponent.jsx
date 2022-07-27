@@ -1,6 +1,5 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
 
 // components
 import AboutPokemonComponent from "./AboutPokemonComponent";
@@ -13,7 +12,7 @@ function TabComponent(pokemon) {
   const panels = [
     <AboutPokemonComponent height={pokemon.height} weight={pokemon.weight}/>,
     <StatsPokemonComponent />,
-    <EvolutionPokemonComponent />,
+    <EvolutionPokemonComponent id={pokemon.id}/>,
     <MovesPokemonComponent />,
   ];
   return (

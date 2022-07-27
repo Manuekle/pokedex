@@ -65,14 +65,14 @@ function Pokemon() {
             <div className="grid grid-cols-2 pt-8">
               <div className="flex justify-start">
                 <div className="flex flex-col">
-                  <h1 className="text-white font-bold text-lg lg:text-4xl capitalize">
+                  <h1 className="text-white font-bold text-xl lg:text-4xl capitalize">
                     {pokemon.name}
                   </h1>
                   <div className="flex flex-wrap gap-1 pt-2 w-full">
                     {pokemon.types.map((type, i) => {
                       return (
                         <div
-                          className="text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-white pr-4 pl-4 pt-1 pb-1"
+                          className="text-sm text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-white pr-4 pl-4 pt-1 pb-1"
                           key={i}
                         >
                           {type.type.name}
@@ -92,7 +92,11 @@ function Pokemon() {
             </div>
           </div>
           <div className="bg-white rounded-t-2xl rounded-b-lg">
-            <TabComponent height={pokemon.height} weight={pokemon.weight} />
+            <TabComponent
+              height={pokemon.height}
+              weight={pokemon.weight}
+              id={pokemon.id}
+            />
           </div>
         </section>
       )}
