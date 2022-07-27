@@ -19,7 +19,7 @@ function TabComponent(pokemon) {
     <>
       <Tabs>
         <div className="p-3">
-          <TabList className="flex flex-row gap-8 lg:gap-12 justify-center">
+          <TabList className="flex flex-row gap-6 lg:gap-12 justify-center">
             {tabs.map((tab, i) => {
               return (
                 <Tab

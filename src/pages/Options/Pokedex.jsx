@@ -40,19 +40,18 @@ function Pokedex() {
   return (
     <div className="grid grid-cols-5 gap-6 pt-8">
       <div className="col-span-5 lg:col-span-1">
-        <div className="flex lg:ml-0 ml-6">
+        <div className="flex lg:ml-0">
           <SearchComponent
             onChange={(e) => setSearch(e.target.value)}
             value={search}
           />
         </div>
-
         <CategoriesComponent pokemon={pokemonData} />
       </div>
 
       {loading ? (
-        <div className="col-span-4">
-          <span className="flex items-center justify-center h-full text-center">
+        <div className="col-span-5 lg:col-span-4">
+          <span className="flex items-center justify-center h-full w-full">
             <LoaderComponent />
           </span>
         </div>

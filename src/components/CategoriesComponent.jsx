@@ -40,7 +40,7 @@ function CategoriesComponent({ pokemon }) {
     <div className="grid grid-cols-1 gap-2 mr-4 pt-4">
       <div className="col-span-1 flex justify-center">
         <button
-          className="text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-black pr-24 pl-24 pt-1 pb-1 shadow-sm"
+          className="active text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-black pr-24 pl-24 pt-1 pb-1 shadow-sm"
           onClick={() => filtered("all")}
         >
           Show all
@@ -50,7 +50,7 @@ function CategoriesComponent({ pokemon }) {
         <div className="grid grid-cols-3 gap-2">
           {typed.map((type) => (
             <button
-              className="text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-black pr-4 pl-4 pt-1 pb-1 opacity-80 shadow-sm"
+              className="active text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-black pr-4 pl-4 pt-1 pb-1 opacity-80 shadow-sm"
               style={{
                 backgroundColor: Colors[type.name],
                 boxShadow: `0px 0px 4px ${Colors[type.name]}`,
