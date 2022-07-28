@@ -10,9 +10,14 @@ function TabComponent(pokemon) {
   const tabs = ["About", "Stats", "Evolution", "Moves"];
 
   const panels = [
-    <AboutPokemonComponent height={pokemon.height} weight={pokemon.weight} id={pokemon.id}/>,
+    <AboutPokemonComponent
+      height={pokemon.height}
+      weight={pokemon.weight}
+      id={pokemon.id}
+      abilities={pokemon.abilities}
+    />,
     <StatsPokemonComponent />,
-    <EvolutionPokemonComponent id={pokemon.id}/>,
+    <EvolutionPokemonComponent id={pokemon.id} />,
     <MovesPokemonComponent />,
   ];
   return (

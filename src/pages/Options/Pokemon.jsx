@@ -71,6 +71,13 @@ function Pokemon() {
                       <h1 className="text-white font-bold text-xl lg:text-4xl capitalize">
                         {pokemon.name}
                       </h1>
+                      <div className="pt-2 pb-2">
+                        <img
+                          src={pokemon.sprites.other.dream_world.front_default}
+                          alt={pokemon.name}
+                          className="w-32 h-32"
+                        />
+                      </div>
                       <div className="flex flex-wrap gap-1 pt-2 w-full">
                         {pokemon.types.map((type, i) => {
                           return (
@@ -99,6 +106,7 @@ function Pokemon() {
                   height={pokemon.height}
                   weight={pokemon.weight}
                   id={pokemon.id}
+                  abilities={pokemon.abilities}
                 />
               </div>
             </section>

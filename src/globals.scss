@@ -9,7 +9,7 @@ body {
 }
 
 .react-tabs {
-  -webkit-tap-highlight-color: transparent;
+  color: #000;
 }
 
 .react-tabs__tab-list {
@@ -32,7 +32,7 @@ body {
 .react-tabs__tab--selected {
   background: #fff;
   border-color: #aaa;
-  color: #333;
+  color: #333 !important;
   // border-radius: 5px 5px 0 0;
   outline: none;
   border: none;

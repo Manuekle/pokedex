@@ -6,7 +6,10 @@ function AboutPokemonComponent(props) {
 
   const [description, setDescription] = useState([]);
 
+  const [habitat, setHabitat] = useState([]);
+
   const id = props.id;
+  const abilities = props.abilities;
 
   useEffect(() => {
     const getCharacteristic = async () => {
@@ -16,6 +19,7 @@ function AboutPokemonComponent(props) {
         );
         setSpecies(res.data);
         setDescription(res.data.flavor_text_entries[0].flavor_text);
+        setHabitat(res.data.habitat);
       } catch (error) {
         console.log("error");
       }
@@ -31,7 +35,7 @@ function AboutPokemonComponent(props) {
   //   }
   // });
 
-  console.log(species)
+  console.log(habitat);
 
   return (
     <section className="lg:p-7 lg:pl-14 p-4 lg:pr-12">
@@ -51,22 +55,40 @@ function AboutPokemonComponent(props) {
                 height: 2,
               },
             }}
-          >           
+          >
             <div className="flex flex-row gap-16">
               <span className="text-lg font-medium">
                 <div>
                   <h1 className="text-gray-400">Height</h1>
                   <p className="text-sm font-normal">{props.height} m</p>
                 </div>
-                <br/>
+                <br />
                 <div>
                   <h1 className="text-gray-400">Weight</h1>
                   <p className="text-sm font-normal">{props.weight} m</p>
                 </div>
-              </span>             
+              </span>
               <span className="text-lg font-medium">
-                <h1 className="text-gray-400">Weight</h1>
-                <p className="text-sm font-normal">{props.weight} Kg</p>
+                <div>
+                  <h1 className="text-gray-400">Habitat</h1>
+                  <p className="text-sm font-normal capitalize">
+                    {habitat.name}
+                  </p>
+                </div>
+                <br />
+                <div>
+                  <h1 className="text-gray-400">Abilities</h1>
+                  <p className="text-sm font-normal capitalize flex flex-row gap-2 pt-2">
+                    {abilities.map((item) => (
+                      <button
+                        className="active text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-black pr-4 pl-4 pt-1 pb-1 opacity-80 shadow-sm"
+                        key={item.ability.name}
+                      >
+                        {item.ability.name}
+                      </button>
+                    ))}
+                  </p>
+                </div>
               </span>
             </div>
           </div>

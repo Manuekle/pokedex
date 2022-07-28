@@ -61,7 +61,7 @@ function Landing() {
             className="bg-purple-400 shadow-lg shadow-purple-400/50 relative p-2 overflow-hidden w:full mt:4 mb-4 lg:mt-0 lg:mb-0 lg:w-56 rounded-2xl pt-6 pb-6 pl-7 transition ease-out delay-10 hover:-translate-y-1 hover:scale-120 duration-300"
           />
           <SectionComponent
-            text="Type Charts"
+            text="Types"
             onClick={() => {
               // link
               window.location.href = "/type-charts";
