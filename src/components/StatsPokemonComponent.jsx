@@ -10,17 +10,6 @@ function StatsPokemonComponent(props) {
       <div className="grid grid-cols-6 gap-4">
         {stats.map((stat, i) => (
           <>
-            {/* <div className="col-span-5 flex items-center">
-              <span className="font-normal text-gray-500">
-                {stat.stat.name}
-              </span>
-            </div>
-            <div className="col-span-1 flex items-center">
-              <span className="font-normal text-gray-500">
-                {stat.base_stat}
-              </span>
-            </div> */}
-
             <div className="col-span-2 flex items-center justify-start">
               <span className="font-normal text-gray-500 capitalize">
                 {stat.stat.name}

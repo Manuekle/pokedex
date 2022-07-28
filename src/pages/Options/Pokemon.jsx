@@ -38,7 +38,7 @@ function Pokemon() {
     fetchData();
   }, [id, setPokemon]);
 
-  console.log(pokemon);
+  // console.log(pokemon);
 
   return (
     <div className="pt-8">
@@ -111,6 +111,7 @@ function Pokemon() {
                   id={pokemon.id}
                   abilities={pokemon.abilities}
                   stats={pokemon.stats}
+                  moves={pokemon.moves}
                 />
               </div>
             </section>

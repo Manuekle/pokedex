@@ -6,26 +6,42 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 function EvolutionPokemonComponent(props) {
   const [evolution, setEvolution] = useState([]);
+  const [species, setSpecies] = useState([]);
 
   const arrow = <FontAwesomeIcon icon={faArrowRight} size="xl" />;
 
   const id = props.id;
 
+  const evoChain = species.url;
+
   useEffect(() => {
-    const getEvolution = async () => {
+    const getSpecies = async () => {
       try {
         const res = await axios.get(
-          `https://pokeapi.co/api/v2/evolution-chain/${id}`
+          `https://pokeapi.co/api/v2/pokemon-species/${id}`
         );
-        setEvolution(res.data.chain);
+        setSpecies(res.data.evolution_chain);
       } catch (error) {
         console.log(error);
       }
     };
+
+    const getEvolution = async () => {
+      try {
+        const res = await axios.get(evoChain);
+        setEvolution(res.data.chain);
+      } catch (error) {
+        console.log("error");
+      }
+    };
+
+    getSpecies();
     getEvolution();
-  }, [id, setEvolution]);
+  }, [evoChain, id, setSpecies, setEvolution]);
 
   // console.log(evolution);
+
+  // chain map filter
 
   return (
     <div className="grid grid-cols-3 p-10 gap-8">
@@ -47,6 +63,7 @@ function EvolutionPokemonComponent(props) {
           <span className="text-black font-bold flex">Lvl.</span>
         </div>
       </div>
+
     </div>
   );
 }

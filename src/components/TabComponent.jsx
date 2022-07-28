@@ -17,8 +17,8 @@ function TabComponent(pokemon) {
       abilities={pokemon.abilities}
     />,
     <StatsPokemonComponent stats={pokemon.stats}/>,
-    <EvolutionPokemonComponent id={pokemon.id} />,
-    <MovesPokemonComponent />,
+    <EvolutionPokemonComponent id={pokemon.id}/>,
+    <MovesPokemonComponent moves={pokemon.moves}/>,
   ];
   return (
     <>
