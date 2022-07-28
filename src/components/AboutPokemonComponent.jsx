@@ -35,7 +35,7 @@ function AboutPokemonComponent(props) {
   //   }
   // });
 
-  console.log(habitat);
+  // console.log(species);
 
   return (
     <section className="lg:p-7 lg:pl-14 p-4 lg:pr-12">

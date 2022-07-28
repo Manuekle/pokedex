@@ -110,6 +110,7 @@ function Pokemon() {
                   weight={pokemon.weight}
                   id={pokemon.id}
                   abilities={pokemon.abilities}
+                  stats={pokemon.stats}
                 />
               </div>
             </section>

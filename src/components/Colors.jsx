@@ -184,6 +184,10 @@ const Colors = {
   shadow: "#000000",
 
 
+// stats
+  hp: "#F87171",
+  defense: "#F87171",
+  speed: "#F87171",
 
 
   
