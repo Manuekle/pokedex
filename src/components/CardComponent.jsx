@@ -42,12 +42,7 @@ function CardComponent({ pokemon }) {
           {pokemon.types.map((type, i) => {
             return (
               <div
-                className="text-xs text-white font-semibold rounded-2xl capitalize opacity-90  pr-4 pl-4 pt-1 pb-1"
-                style={{
-                  backgroundColor: Colors[type.type.name],
-                  boxShadow: `0px 0px 10px ${type.type[pokemon.name]}`,
-                  border: `1px solid ${Colors[type.type.name]}`,
-                }}
+                className="text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-white pr-4 pl-4 pt-1 pb-1"               
                 key={i}
               >
                 {type.type.name}
@@ -57,7 +52,7 @@ function CardComponent({ pokemon }) {
         </div>
 
         <svg
-          className="absolute w-64 h-64 top-10 left-44 md:left-44 lg:left-36 -z-1 opacity-20"
+          className="absolute w-64 h-64 top-10 left-40 md:left-40 lg:left-40 -z-1 opacity-20"
           xmlns="http://www.w3.org/2000/svg"
           width="24px"
           height="24px"

@@ -57,12 +57,15 @@ function Pokemon() {
               <div className="p-8">
                 <div className="grid grid-cols-2">
                   <div className="flex justify-start">
-                    <button onClick={() => navigate(-1)} className="text-white">
+                    <button
+                      onClick={() => navigate(-1)}
+                      className="text-white active:text-gray-300"
+                    >
                       {arrow}
                     </button>
                   </div>
                   <div className="flex justify-end">
-                    <span className="text-rose-500">{heart}</span>
+                    <span className="text-red-500">{heart}</span>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 pt-8">

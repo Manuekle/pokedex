@@ -78,7 +78,7 @@ function AboutPokemonComponent(props) {
                 <br />
                 <div>
                   <h1 className="text-gray-400">Abilities</h1>
-                  <p className="text-sm font-normal capitalize flex flex-row gap-2 pt-2">
+                  <p className="text-sm font-normal capitalize flex lg:flex-row flex-col gap-2 pt-2">
                     {abilities.map((item) => (
                       <button
                         className="active text-xs text-white font-semibold rounded-2xl capitalize bg-opacity-20 bg-black pr-4 pl-4 pt-1 pb-1 opacity-80 shadow-sm"
