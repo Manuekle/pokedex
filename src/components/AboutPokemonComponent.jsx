@@ -18,7 +18,7 @@ function AboutPokemonComponent(props) {
           `https://pokeapi.co/api/v2/pokemon-species/${id}`
         );
         setSpecies(res.data);
-        setDescription(res.data.flavor_text_entries[0].flavor_text);
+        setDescription(res.data.flavor_text_entries);
         setHabitat(res.data.habitat);
       } catch (error) {
         console.log("error");
@@ -26,23 +26,23 @@ function AboutPokemonComponent(props) {
     };
 
     getCharacteristic();
-  }, [id, setSpecies]);
+  }, [id, setSpecies, species]);
 
-  // description map filter
-  // const descriptionMap = description.map((item) => {
-  //   if (item.language.name === "en") {
-  //     return item.flavor_text.substring(0, item.flavor_text.indexOf("."));
-  //   }
-  // });
+  // description map filter version red
+  const descriptionMap = description.map((item) => {
+    if (item.version.name === "red") {
+      return item.flavor_text.replace(/\s+/g, " ");
+    }
+  });
 
-  // console.log(species);
+  // console.log(descriptionMap);
 
   return (
     <section className="lg:p-7 lg:pl-14 p-4 lg:pr-12">
       <div className="grid grid-cols-1">
         <div className="lg:col-span-1 col-span-2">
           <span className="text-lg font-bold">Description</span>
-          <p className="text-md font-normal">{description}</p>
+          <p className="text-md font-normal">{descriptionMap}</p>
           <div
             className="shadow-lg rounded-lg"
             style={{

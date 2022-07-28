@@ -27,44 +27,20 @@ function EvolutionPokemonComponent(props) {
     };
 
     const getEvolution = async () => {
-      try {
-        const res = await axios.get(evoChain);
-        setEvolution(res.data.chain);
-      } catch (error) {
-        console.log("error");
-      }
+      const response = await axios.get(evoChain);
+      setEvolution(response.data.chain);
     };
 
     getSpecies();
     getEvolution();
-  }, [evoChain, id, setSpecies, setEvolution]);
+  }, [id, setSpecies, setEvolution, evoChain]);
 
-  // console.log(evolution);
-
-  // chain map filter
+  console.log(evolution);
 
   return (
-    <div className="grid grid-cols-3 p-10 gap-8">
-      <div className="flex justify-center ">
-        <div className="flex flex-col">
-          <span className="text-gray-300">{arrow}</span>
-          <span className="text-black font-bold flex">Lvl.</span>
-        </div>
-      </div>
-      <div className="flex justify-center ">
-        <div className="flex flex-col">
-          <span className="text-gray-300">{arrow}</span>
-          <span className="text-black font-bold flex">Lvl.</span>
-        </div>
-      </div>
-      <div className="flex justify-center ">
-        <div className="flex flex-col">
-          <span className="text-gray-300">{arrow}</span>
-          <span className="text-black font-bold flex">Lvl.</span>
-        </div>
-      </div>
-
-    </div>
+    <>
+      
+    </>
   );
 }
 export default EvolutionPokemonComponent;
